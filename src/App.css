@@ -1,0 +1,178 @@
+/* General Body Styling */
+body {
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBody 1s ease-in;
+}
+
+/* Fade-in for Body */
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Main Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+  max-width: 600px;
+  min-height: 400px;
+  background-color: rgba(136, 135, 135, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  animation: slideUp 1s ease;
+}
+
+/* Slide-up Animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+
+/* Answer area */
+.answer-container {
+  width: 100%;
+  text-align: center;
+}
+
+/* Input Styling */
+input {
+  text-align: center;
+  width: 60%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+button {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #054b92;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #f88783;
+  transform: scale(1.02);
+}
+
+.horizontal-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#result {
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* Correct / Incorrect Feedback */
+.checkmark,
+.cross {
+  color: transparent;
+  font-size: 2rem;
+  animation: fadeColor 0.5s ease forwards;
+}
+
+@keyframes fadeColor {
+  to {
+    color: green; /* overridden for cross in .cross */
+  }
+}
+
+.cross {
+  animation: fadeColorRed 0.5s ease forwards;
+}
+
+@keyframes fadeColorRed {
+  to {
+    color: red;
+  }
+}
+
+/* Restart Button */
+.restart-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffffcc;
+  color: #333;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.restart-button:hover {
+  background-color: #054b92;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  input {
+    width: 80%;
+  }
+}
